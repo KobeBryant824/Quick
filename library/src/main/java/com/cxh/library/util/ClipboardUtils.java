@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -10,9 +10,9 @@ import android.net.Uri;
  * 剪贴板相关工具类
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public class ClipboardUtil {
+public class ClipboardUtils {
 
-    private ClipboardUtil() {
+    private ClipboardUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 

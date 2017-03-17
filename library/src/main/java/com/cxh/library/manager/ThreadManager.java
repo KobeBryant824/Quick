@@ -1,8 +1,4 @@
-/*
- * File Name: ThreadManager.java 
- * History:
- * Created by mwqi on 2014-4-4
- */
+
 package com.cxh.library.manager;
 
 import java.util.HashMap;

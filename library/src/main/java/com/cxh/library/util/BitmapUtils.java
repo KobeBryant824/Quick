@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -19,7 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 
-public class BitmapUtil {
+public class BitmapUtils {
 
 	/** 图片圆角处理  */
 	public static Bitmap getRoundCornerImage(Bitmap bitmap, int roundPixels) {
@@ -79,12 +79,12 @@ public class BitmapUtil {
 		Bitmap bitmap = BitmapFactory.decodeFile(srcPath, opts);
 		int srcH = opts.outHeight;
 		int srcW = opts.outWidth;
-		LogUtil.i("srcH:" + srcH + "---srcW: " + srcW);
+		LogUtils.i("srcH:" + srcH + "---srcW: " + srcW);
 		WindowManager wm = (WindowManager) context.getSystemService(context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
 		int screenH = display.getHeight();
 		int screenW = display.getWidth();
-		LogUtil.i("screenH:" + screenH + "---screenW: " + screenW);
+		LogUtils.i("screenH:" + screenH + "---screenW: " + screenW);
 		int sy = srcH / screenH;
 		int sx = srcW / screenW;
 		int scale = 1;
@@ -114,12 +114,12 @@ public class BitmapUtil {
 			bitmap = BitmapFactory.decodeStream(picUrl.openStream(), null, opts);
 			int srcH = opts.outHeight;
 			int srcW = opts.outWidth;
-			LogUtil.i("srcH:" + srcH + "---srcW: " + srcW);
+			LogUtils.i("srcH:" + srcH + "---srcW: " + srcW);
 			WindowManager wm = (WindowManager) context.getSystemService(context.WINDOW_SERVICE);
 			Display display = wm.getDefaultDisplay();
 			int screenH = display.getHeight();
 			int screenW = display.getWidth();
-			LogUtil.i("screenH:" + screenH + "---screenW: " + screenW);
+			LogUtils.i("screenH:" + screenH + "---screenW: " + screenW);
 			int sy = srcH / screenH;
 			int sx = srcW / screenW;
 			int scale = 1;

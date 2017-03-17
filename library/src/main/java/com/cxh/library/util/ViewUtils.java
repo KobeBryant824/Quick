@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.app.Activity;
 import android.graphics.Typeface;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class ViewUtil {
+public class ViewUtils {
 
 	/** 把自身从父View中移除 */
 	public static void removeSelfFromParent(View view) {

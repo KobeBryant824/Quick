@@ -1,29 +1,27 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.app.Activity;
 import android.content.Context;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cxh.library.R;
 
 
-public class ToastUtil {
+public class ToastUtils {
 
 	/** 安全的显示系统Toast  */
 	public static void showTaost(final Activity ctx, final String msg){
 		if("main".equals(Thread.currentThread().getName())){ // 判断 当前是否是在主线程
-			Toast.makeText(ctx, msg, 0).show();
+			Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show();
 		}else{
 			// 不是主线程 
 			ctx.runOnUiThread(new Runnable() {
 				@Override
 				public void run() {
-					Toast.makeText(ctx, msg, 0).show();
+					Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show();
 				}
 			});
 		}
@@ -44,7 +42,7 @@ public class ToastUtil {
 	}
 
 	public static void showToast(Context context, String msg, int time) {
-		Toast toast = new Toast(context.getApplicationContext());
+		Toast toast = new Toast(context);
 		View view = View.inflate(context, R.layout.view_toast, null);
 		TextView tv_message = (TextView) view.findViewById(R.id.tv_message);
 		tv_message.setText(msg);

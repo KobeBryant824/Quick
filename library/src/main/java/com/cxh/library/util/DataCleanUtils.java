@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.os.Environment;
@@ -10,7 +10,7 @@ import java.io.File;
  * 本应用数据清除管理器(主要功能有清除内/外缓存，清除数据库，清除sharedPreference，清除files和清除自定义目录)
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public class DataCleanUtil {
+public class DataCleanUtils {
 
 	/** 清除本应用内部缓存(/data/data/com.xxx.xxx/cache) */
 	public static void cleanInternalCache(Context context) {

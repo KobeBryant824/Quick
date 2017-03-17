@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,9 +10,9 @@ import android.provider.MediaStore;
  * 多媒体操作
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public class MediaUtil {
+public class MediaUtils {
 
-    private static final String TAG = MediaUtil.class.getSimpleName();
+    private static final String TAG = MediaUtils.class.getSimpleName();
 
     public static final int PHOTO_REQUEST_GALLERY = 1000;
     public static final int PHOTO_REQUEST_CAMERA = 1001;

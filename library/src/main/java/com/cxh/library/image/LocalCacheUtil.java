@@ -4,8 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
 
-import com.cxh.library.utils.FileUtil;
-import com.cxh.library.utils.MD5Util;
+import com.cxh.library.util.FileUtils;
+import com.cxh.library.util.MD5Utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,13 +17,13 @@ import java.io.FileOutputStream;
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
 public class LocalCacheUtil {
-	private final String CACHE_DIR = FileUtil.getCacheDir();
+	private final String CACHE_DIR = FileUtils.getCacheDir();
 	
 	/** 根据Url存储当前图片  */
 	public void addBitmap2Local(String imgUrl, Bitmap bm) {
 		if (getBitmapFromLocal(imgUrl) == null) {
 			try {
-				String fileName = MD5Util.encrypt(imgUrl);
+				String fileName = MD5Utils.encrypt(imgUrl);
 				File file = new File(CACHE_DIR, fileName);
 				File parentFile = file.getParentFile();
 				if (!parentFile.exists()) {
@@ -40,7 +40,7 @@ public class LocalCacheUtil {
 	/** 根据Url从本地获取图片  */
 	public Bitmap getBitmapFromLocal(String imgUrl) {
 		try {
-			String fileName = MD5Util.encrypt(imgUrl);
+			String fileName = MD5Utils.encrypt(imgUrl);
 			File file = new File(CACHE_DIR, fileName);
 			if (file.exists()) {
 				FileInputStream in = new FileInputStream(file);

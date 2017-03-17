@@ -1,10 +1,10 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.util.TypedValue;
 
 
-public class DensityUtil {
+public class DensityUtils {
 	
 	/** dp转px  */
 	public static int dp2px(Context context, float dpVal) {

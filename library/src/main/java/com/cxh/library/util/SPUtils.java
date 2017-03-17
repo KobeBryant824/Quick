@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 
-public class SPUtil {
+public class SPUtils {
 	/** 保存在手机里面的文件名 */
 	public static final String FILE_NAME = "share_data";
 

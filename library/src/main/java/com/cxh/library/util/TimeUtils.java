@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 
 
-public class TimeUtil {
+public class TimeUtils {
 
     /**
      * 获取当前时间

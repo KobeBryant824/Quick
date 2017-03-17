@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.os.Environment;
 import android.text.TextUtils;
@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class FileUtil {
+public class FileUtils {
 	public static final String ROOT_DIR = "cxh";
 	public static final String DOWNLOAD_DIR = "download";
 	public static final String CACHE_DIR = "cache";
@@ -41,7 +41,7 @@ public class FileUtil {
 	/** 获取应用目录，当SD卡存在时，获取SD卡上的目录，当SD卡不存在时，获取应用的cache目录 */
 	public static String getDir(String name) {
 		StringBuilder sb = new StringBuilder();
-		if (SDCardUtil.isSDCardEnable()) {
+		if (SDCardUtils.isSDCardEnable()) {
 			sb.append(getExternalStoragePath());
 		} else {
 			sb.append(getCachePath());
@@ -115,8 +115,8 @@ public class FileUtil {
 			e.printStackTrace();
 			return false;
 		} finally {
-			IOUtil.close(out);
-			IOUtil.close(in);
+			IOUtils.close(out);
+			IOUtils.close(in);
 		}
 		return true;
 	}
@@ -175,8 +175,8 @@ public class FileUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(fos);
-			IOUtil.close(is);
+			IOUtils.close(fos);
+			IOUtils.close(is);
 		}
 		return res;
 	}
@@ -210,7 +210,7 @@ public class FileUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(raf);
+			IOUtils.close(raf);
 		}
 		return res;
 	}
@@ -253,8 +253,8 @@ public class FileUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(fis);
-			IOUtil.close(fos);
+			IOUtils.close(fis);
+			IOUtils.close(fos);
 		}
 	}
 
@@ -277,7 +277,7 @@ public class FileUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(fis);
+			IOUtils.close(fis);
 		}
 		return value;
 	}
@@ -305,8 +305,8 @@ public class FileUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(fis);
-			IOUtil.close(fos);
+			IOUtils.close(fis);
+			IOUtils.close(fos);
 		}
 	}
 
@@ -329,7 +329,7 @@ public class FileUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(fis);
+			IOUtils.close(fis);
 		}
 		return map;
 	}
@@ -356,8 +356,8 @@ public class FileUtil {
 			e.printStackTrace();
 			return false;
 		} finally {
-			IOUtil.close(in);
-			IOUtil.close(out);
+			IOUtils.close(in);
+			IOUtils.close(out);
 		}
 		if (delete) {
 			file.delete();

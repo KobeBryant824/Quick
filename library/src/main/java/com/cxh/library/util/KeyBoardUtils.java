@@ -1,10 +1,10 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-public class KeyBoardUtil {
+public class KeyBoardUtils {
 	
 	/** 打卡软键盘  */
 	public static void openKeybord(EditText mEditText, Context mContext) {

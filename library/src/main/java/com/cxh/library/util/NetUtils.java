@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.support.v7.app.AlertDialog;
 import java.util.List;
 
 
-public class NetUtil {
+public class NetUtils {
 	private static AlertDialog dialog;
 
 	/**
@@ -115,7 +115,7 @@ public class NetUtil {
 		builder.setNegativeButton("取消", new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				NetUtil.dialog = null;
+				NetUtils.dialog = null;
 			}
 		});
 		dialog = builder.create();

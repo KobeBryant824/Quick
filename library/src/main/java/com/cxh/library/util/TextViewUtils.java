@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.text.Spannable;
@@ -9,7 +9,7 @@ import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
 
-public class TextViewUtil {
+public class TextViewUtils {
 
 	/**
 	 * 设置部分文字颜色和大小
@@ -33,7 +33,7 @@ public class TextViewUtil {
                                            String str, int start, int end, int color, boolean flag, int spSize) {
 		SpannableString ss = new SpannableString(str);
 		if (flag) {
-			ss.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+			ss.setSpan(new AbsoluteSizeSpan(DensityUtils.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		}
 		ss.setSpan(new ForegroundColorSpan(color), start, end, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		textView.setText(ss);
@@ -48,10 +48,10 @@ public class TextViewUtil {
                                            int spSize1) {
 		SpannableString ss = new SpannableString(str);
 		if (flag) {
-			ss.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+			ss.setSpan(new AbsoluteSizeSpan(DensityUtils.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		}
 		if (flag1) {
-			ss.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(context, spSize1)), start1, end1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+			ss.setSpan(new AbsoluteSizeSpan(DensityUtils.sp2px(context, spSize1)), start1, end1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		}
 
 		ss.setSpan(new ForegroundColorSpan(color), start, end, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
@@ -78,7 +78,7 @@ public class TextViewUtil {
                                                  String str, int start, int end, int color, int spSize) {
 		SpannableString ss = new SpannableString(str);
 		// 设置大小
-		ss.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+		ss.setSpan(new AbsoluteSizeSpan(DensityUtils.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		//设置颜色
 		ss.setSpan(new ForegroundColorSpan(color), start, end, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		// 加粗
@@ -104,7 +104,7 @@ public class TextViewUtil {
                                          String str, int start, int end, int spSize) {
 		SpannableString ss = new SpannableString(str);
 		// 设置大小
-		ss.setSpan(new AbsoluteSizeSpan(DensityUtil.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+		ss.setSpan(new AbsoluteSizeSpan(DensityUtils.sp2px(context, spSize)), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		// 加粗
 //		ss.setSpan(new MyStyleSpan(Typeface.NORMAL), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		textView.setText(ss);

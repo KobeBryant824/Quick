@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.os.Environment;
 import android.os.StatFs;
@@ -6,7 +6,7 @@ import android.os.StatFs;
 import java.io.File;
 
 
-public class SDCardUtil {
+public class SDCardUtils {
 	
 	/** 判断SDCard是否可用 */
 	public static boolean isSDCardEnable() {

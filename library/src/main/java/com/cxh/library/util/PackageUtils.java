@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -29,7 +29,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 
-public class PackageUtil {
+public class PackageUtils {
 	
 	/** 根据packageName获取packageInfo */
 	public static PackageInfo getPackageInfo(String packageName) {
@@ -46,7 +46,7 @@ public class PackageUtil {
 		try {
 			info = manager.getPackageInfo(packageName, PackageManager.GET_UNINSTALLED_PACKAGES);
 		} catch (PackageManager.NameNotFoundException e) {
-			LogUtil.e(e.toString());
+			LogUtils.e(e.toString());
 		}
 		return info;
 	}
@@ -83,7 +83,7 @@ public class PackageUtil {
 			packageInfo = pm.getPackageInfo(packageName, 0);
 			return isThirdPartyApp(packageInfo);
 		} catch (PackageManager.NameNotFoundException e) {
-			LogUtil.e(e.toString());
+			LogUtils.e(e.toString());
 			return false;
 		}
 	}
@@ -148,7 +148,7 @@ public class PackageUtil {
 					resultSign += builder.toString();
 				}
 			} catch (CertificateException e) {
-				LogUtil.e(e.toString());
+				LogUtils.e(e.toString());
 			}
 			is.close();
 		}
@@ -189,22 +189,22 @@ public class PackageUtil {
 	}
 
 	/** 通过包名读取已安装APP数字签名 */
-	public static String getInstalledPackageSignature(String packageName) {
-		Context context = MApplication.getContext();
-		if (null == context) {
-			return null;
-		}
-
-		String signature = null;
-		try {
-			PackageManager pm = context.getPackageManager();
-			ApplicationInfo appInfo = pm.getApplicationInfo(packageName, PackageManager.GET_SIGNATURES);
-			String apkPath = appInfo.sourceDir;
-			signature = getJarSignature(apkPath);
-		}  catch (Exception e) {
-		}
-		return signature;
-	}
+//	public static String getInstalledPackageSignature(String packageName) {
+//		Context context = MApplication.getContext();
+//		if (null == context) {
+//			return null;
+//		}
+//
+//		String signature = null;
+//		try {
+//			PackageManager pm = context.getPackageManager();
+//			ApplicationInfo appInfo = pm.getApplicationInfo(packageName, PackageManager.GET_SIGNATURES);
+//			String apkPath = appInfo.sourceDir;
+//			signature = getJarSignature(apkPath);
+//		}  catch (Exception e) {
+//		}
+//		return signature;
+//	}
 
 	/** 获取指定路径的apk的资源 */
 	public static Resources getAPKResources(String apkPath) throws Exception {

@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cxh.library.utils.UIUtil;
-import com.cxh.library.utils.ViewUtil;
+import com.cxh.library.util.UIUtils;
+import com.cxh.library.util.ViewUtils;
 import com.cxh.library.widget.LoadingPage;
 import com.cxh.library.widget.LoadingPage.*;
 
@@ -20,7 +20,7 @@ public abstract class BaseFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		//每次ViewPager要展示该页面时，均会调用该方法获取显示的View
 		if (mContentView == null) {//为null时，创建一个
-			mContentView = new LoadingPage(UIUtil.getContext()) {
+			mContentView = new LoadingPage(UIUtils.getContext()) {
 				@Override
 				public LoadResult load() {
 					return BaseFragment.this.load();
@@ -32,7 +32,7 @@ public abstract class BaseFragment extends Fragment {
 				}
 			};
 		} else {//不为null时，需要把自身从父布局中移除，因为ViewPager会再次添加
-			ViewUtil.removeSelfFromParent(mContentView);
+			ViewUtils.removeSelfFromParent(mContentView);
 		}
 		return mContentView;
 	}

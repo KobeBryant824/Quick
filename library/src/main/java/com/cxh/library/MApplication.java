@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MApplication extends Application implements  Thread.UncaughtExceptionHandler {
 	/** 全局Context，原理是因为Application类是应用最先运行的，所以在我们的代码调用时，该值已经被赋值过了 */
-	private static MApplication mInstance;
+	private static MApplication mAppContext;
 	/** 主线程ID */
 	private static int mMainThreadId = -1;
 	/** 主线程 */
@@ -28,7 +28,7 @@ public class MApplication extends Application implements  Thread.UncaughtExcepti
 	private List<Activity> mActivityList = new LinkedList<Activity>();
 
 	public static MApplication getContext() {
-		return mInstance;
+		return mAppContext;
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class MApplication extends Application implements  Thread.UncaughtExcepti
 		mMainThread = Thread.currentThread();
 		mMainThreadHandler = new Handler();
 		mMainLooper = getMainLooper();
-		mInstance = this;
+		mAppContext = this;
 		super.onCreate();
 
 		/**

@@ -1,11 +1,11 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class IOUtil {
+public class IOUtils {
 	
 	public static String input2Str(InputStream in) throws IOException {
 		return input2Str(in, "utf-8");

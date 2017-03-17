@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.cxh.library.R;
 import com.cxh.library.manager.ActivityManager;
-import com.cxh.library.utils.UIUtil;
+import com.cxh.library.util.UIUtils;
 import com.cxh.library.widget.LoadingPage;
 import com.cxh.library.widget.LoadingPage.*;
 
@@ -32,7 +32,7 @@ public abstract class BaseActivity extends Activity {
 		activityManager = ActivityManager.getInstance();
 		activityManager.pushOneActivity(this);
 
-		mContentView = new LoadingPage(UIUtil.getContext()) {
+		mContentView = new LoadingPage(UIUtils.getContext()) {
 			@Override
 			public LoadResult load() {
 				return BaseActivity.this.load();

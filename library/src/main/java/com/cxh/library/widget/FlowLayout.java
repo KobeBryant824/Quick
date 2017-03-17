@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cxh.library.utils.UIUtil;
+import com.cxh.library.util.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +56,7 @@ public class FlowLayout extends ViewGroup {
 	}
 
 	private void requestLayoutInner() {
-		UIUtil.runInMainThread(new Runnable() {
+		UIUtils.runInMainThread(new Runnable() {
 			@Override
 			public void run() {
 				requestLayout();

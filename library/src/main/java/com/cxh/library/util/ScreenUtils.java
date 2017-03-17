@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 
-public class ScreenUtil {
+public class ScreenUtils {
 	
 	/** 获得屏幕宽度 */
 	public static int getScreenWidth(Context context) {

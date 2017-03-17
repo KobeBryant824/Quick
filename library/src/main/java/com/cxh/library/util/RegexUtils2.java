@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import java.util.regex.Pattern;
 
@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * @Email haigod7@gmail.com
  * @Date 2015-7-8 上午11:25:27
  */
-public class RegexUtil2 {
+public class RegexUtils2 {
     /**
      * 正则表达式：验证用户名
      */
@@ -131,8 +131,8 @@ public class RegexUtil2 {
  
     public static void main(String[] args) {
         String username = "fdsdfsdj";
-        System.out.println(RegexUtil2.isUsername(username));
-        System.out.println(RegexUtil2.isChinese(username));
+        System.out.println(RegexUtils2.isUsername(username));
+        System.out.println(RegexUtils2.isChinese(username));
     }
 }
 

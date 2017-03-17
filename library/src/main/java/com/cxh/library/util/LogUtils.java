@@ -1,8 +1,8 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.util.Log;
 
-public class LogUtil {
+public class LogUtils {
 	/** 是否需要打印bug，可以在application的onCreate函数里面初始，上线可置为false */
 	public static boolean isDebug = true;
 	private static final String TAG = "cxh";

@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.media.MediaRecorder;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
  * 录音
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public class AudioRecordUtil {
+public class AudioRecordUtils {
 	static final private double EMA_FILTER = 0.6;
 	private MediaRecorder mRecorder = null;
 	private double mEMA = 0.0;

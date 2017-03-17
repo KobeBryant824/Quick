@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.cxh.library.MApplication;
 
-public class UIUtil {
+public class UIUtils {
 
 	public static Context getContext() {
 		return MApplication.getContext();

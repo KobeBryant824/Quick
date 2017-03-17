@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 
 import java.util.regex.Pattern;
@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * 正则工具类
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public final class RegexUtil {
+public final class RegexUtils {
 
     /**
      * 手机号码，中间4位星号替换

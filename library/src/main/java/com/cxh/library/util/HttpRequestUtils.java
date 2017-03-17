@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,7 +10,7 @@ import java.net.URL;
  * 原生http请求
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public class HttpRequestUtil {
+public class HttpRequestUtils {
 	private static final int TIMEOUT_IN_MILLIONS = 5000;
 
 	public interface CallBack {
@@ -70,12 +70,12 @@ public class HttpRequestUtil {
 				in = conn.getInputStream();
 				return in;
 			} else {
-				LogUtil.e("访问失败，状态码是" + code);
+				LogUtils.e("访问失败，状态码是" + code);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(in);
+			IOUtils.close(in);
 			if (null != conn) {
 				conn.disconnect();
 			}
@@ -85,7 +85,7 @@ public class HttpRequestUtil {
 
 	public static String doGet2Str(String urlStr) {
 		try {
-			return IOUtil.input2Str(doGet2Is(urlStr));
+			return IOUtils.input2Str(doGet2Is(urlStr));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -125,12 +125,12 @@ public class HttpRequestUtil {
 				in = conn.getInputStream();
 				return in;
 			} else {
-				LogUtil.e("访问失败，状态码是" + code);
+				LogUtils.e("访问失败，状态码是" + code);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			IOUtil.close(in);
+			IOUtils.close(in);
 			if (null != conn) {
 				conn.disconnect();
 			}
@@ -140,7 +140,7 @@ public class HttpRequestUtil {
 
 	public static String doPost2Str(String urlStr, String param) {
 		try {
-			return IOUtil.input2Str(doPost2Is(urlStr, param));
+			return IOUtils.input2Str(doPost2Is(urlStr, param));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

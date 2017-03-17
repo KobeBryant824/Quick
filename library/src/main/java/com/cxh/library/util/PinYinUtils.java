@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
@@ -10,7 +10,7 @@ import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombi
  * 将汉字转换为拼音
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public class PinYinUtil {
+public class PinYinUtils {
 	/**
 	 * 不应该被频繁调用，它消耗一定内存
 	 * @param hanzi

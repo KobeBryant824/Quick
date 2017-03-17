@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -8,7 +8,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 
 
-public class DrawableUtil {
+public class DrawableUtils {
 
 	/** Drawable转Bitmap */
 	public static Bitmap drawable2Bitmap(Drawable drawable) {

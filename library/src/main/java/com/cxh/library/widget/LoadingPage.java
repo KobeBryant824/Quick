@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 
 import com.cxh.library.R;
 import com.cxh.library.manager.ThreadManager;
-import com.cxh.library.utils.UIUtil;
+import com.cxh.library.util.UIUtils;
 
 /**
  * Loading加载页
@@ -32,7 +32,7 @@ public abstract class LoadingPage extends FrameLayout {
 	}
 
 	private void init() {
-		setBackgroundColor(UIUtil.getColor(R.color.bg_page));//设置背景
+		setBackgroundColor(UIUtils.getColor(R.color.bg_page));//设置背景
 		mState = STATE_UNLOADED;//初始化状态
 
 		//创建对应的View，并添加到布局中
@@ -56,7 +56,7 @@ public abstract class LoadingPage extends FrameLayout {
 
 	/** 线程安全的方法 */
 	private void showPageSafe() {
-		UIUtil.runInMainThread(new Runnable() {
+		UIUtils.runInMainThread(new Runnable() {
 			@Override
 			public void run() {
 				showPage();
@@ -112,15 +112,15 @@ public abstract class LoadingPage extends FrameLayout {
 	}
 
 	protected View createLoadingView() {
-		return UIUtil.inflate(R.layout.loading_page_loading);
+		return UIUtils.inflate(R.layout.loading_page_loading);
 	}
 
 	protected View createEmptyView() {
-		return UIUtil.inflate(R.layout.loading_page_empty);
+		return UIUtils.inflate(R.layout.loading_page_empty);
 	}
 
 	protected View createErrorView() {
-		View view = UIUtil.inflate(R.layout.loading_page_error);
+		View view = UIUtils.inflate(R.layout.loading_page_error);
 		view.findViewById(R.id.page_bt).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -138,7 +138,7 @@ public abstract class LoadingPage extends FrameLayout {
 		@Override
 		public void run() {
 			final LoadResult loadResult = load();
-			UIUtil.runInMainThread(new Runnable() {//主线程改变UI
+			UIUtils.runInMainThread(new Runnable() {//主线程改变UI
 				@Override
 				public void run() {
 					//状态的改变和界面息息相关，所以需要放到主线程来赋值，保障同步性

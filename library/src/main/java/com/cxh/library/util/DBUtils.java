@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 
 
-public class DBUtil {
+public class DBUtils {
 	
 	public static SQLiteDatabase openDatabase(Context context , int ID) {
 		try {

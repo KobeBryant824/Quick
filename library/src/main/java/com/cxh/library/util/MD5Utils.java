@@ -1,4 +1,4 @@
-package com.cxh.library.utils;
+package com.cxh.library.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,7 +6,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
-public class MD5Util {
+public class MD5Utils {
     private static final String YAN = "iuqewhurbasd9f6q345896t132y9a6sd96f34h59gsd9fq3";
 
     /**
