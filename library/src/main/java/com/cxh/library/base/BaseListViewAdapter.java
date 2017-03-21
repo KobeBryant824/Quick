@@ -11,11 +11,11 @@ import java.util.List;
  * ListView通用适配器
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
-public abstract class BasicAdapter<T> extends BaseAdapter {
+public abstract class BaseListViewAdapter<T> extends BaseAdapter {
     protected List<T> mList;
     protected Context mContext;
 
-    public BasicAdapter(List<T> list, Context context) {
+    public BaseListViewAdapter(List<T> list, Context context) {
         super();
         this.mList = list;
         this.mContext = context;

@@ -12,7 +12,10 @@ import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
 
-
+/**
+ * 平时收集的一些代码，上项目建议用大型的开源项目替代
+ * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
+ */
 public class MApplication extends Application implements  Thread.UncaughtExceptionHandler {
 	/** 全局Context，原理是因为Application类是应用最先运行的，所以在我们的代码调用时，该值已经被赋值过了 */
 	private static MApplication mAppContext;
