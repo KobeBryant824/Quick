@@ -17,6 +17,10 @@
 - [阿里巴巴矢量图标库](http://www.iconfont.cn/plus/home/index)
 - [手机乐园](http://www.shouji.com.cn/) 手机apk历史版本
 - [简书](http://www.jianshu.com/)
+- [简历模版](https://github.com/Trinea/trinea-download/tree/master/resume)
+- [Android 应用开发助手](https://mp.weixin.qq.com/s?__biz=MzAxNjI3MDkzOQ==&mid=2654472664&idx=1&sn=dfc2b5beb90daa8fd068d8064ce0dcce&chksm=803bfaecb74c73fa9a9addfd4d8bce031186c34b7d7b59ee22df41799c7eaa71a34863890f56&mpshare=1&scene=1&srcid=0105g443TtBNq2VTK9qpLVbo&key=a226a081696afed06cc6c16adbd5c474a637fe50a7b54f3ff66bb2e93601c7a113db9df6a5f34742850536cff223a2812cc2ebc14433ce85d5f13f7fc949e4eef9c8b220b26191bee58256d74f2022a6&ascene=0&uin=MTYzMjY2MTE1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.12.2+build(16C67)&version=12010210&nettype=WIFI&fontScale=100&pass_ticket=rbpcEWdcnbow6%2Frw0WblN5umWjX4EWC%2B%2BsSxXkJYlFg%3D)
+- [神注释大全](https://github.com/Blankj/awesome-comment)
+- [苹果超酷字体Menlo](http://101.96.8.164/www.ffonts.net/PT-Mono.font.zip)
 
 #### Blog
 - [Google Samples](https://github.com/googlesamples)
@@ -28,6 +32,10 @@
 - [干货集中营](http://gank.io/)
 - [Android开发技术周报](http://www.androidweekly.cn/)
 - [Hongyang](http://blog.csdn.net/lmj623565791)
+- [郭霖](http://blog.csdn.net/sinyu890807/article/list/1)
+- [美团点评技术团队](http://tech.meituan.com/)
+- [CodeKK](http://p.codekk.com/)
+- [泡在网上的日子](http://jcodecraeer.com/plus/list.php?tid=31)
 
 
 

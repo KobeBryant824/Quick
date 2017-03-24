@@ -1,6 +1,5 @@
 package com.cxh.library;
 
-import android.app.Activity;
 import android.app.Application;
 import android.os.Environment;
 import android.os.Handler;
@@ -9,8 +8,6 @@ import android.text.format.DateFormat;
 
 import java.io.PrintStream;
 import java.lang.reflect.Field;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * 平时收集的一些代码，上项目建议用大型的开源项目替代
@@ -27,8 +24,6 @@ public class MApplication extends Application implements  Thread.UncaughtExcepti
 	private static Handler mMainThreadHandler;
 	/** 主线程Looper */
 	private static Looper mMainLooper;
-
-	private List<Activity> mActivityList = new LinkedList<Activity>();
 
 	public static MApplication getContext() {
 		return mAppContext;
@@ -103,20 +98,4 @@ public class MApplication extends Application implements  Thread.UncaughtExcepti
 		return mMainLooper;
 	}
 
-	public void addActivity(Activity activity) {
-		mActivityList.add(activity);
-	}
-
-	/** 关闭保存的Activity */
-	public void exitApp() {
-		if (mActivityList.size() == 0) return;
-		Activity activity;
-		for (int i = 0; i < mActivityList.size(); i++) {
-			activity = mActivityList.get(i);
-			if (activity != null && !activity.isFinishing()) {
-				activity.finish();
-			}
-		}
-		android.os.Process.killProcess(android.os.Process.myPid());
-	}
 }
