@@ -1,4 +1,4 @@
-package com.cxh.library.Animation;
+package com.cxh.library.animation;
 
 import android.view.View;
 import android.view.animation.Animation;
