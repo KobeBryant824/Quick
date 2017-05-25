@@ -1,4 +1,4 @@
-package com.cxh.library.image;
+package com.cxh.library.imageloader;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

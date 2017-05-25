@@ -1,11 +1,11 @@
-package com.cxh.library.image;
+package com.cxh.library.imageloader;
 
 import android.graphics.Bitmap;
 import android.os.Handler;
 
 
 /**
- * 图片缓存管理类
+ * 自定义图片加载
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
 public class ImageLoader {
