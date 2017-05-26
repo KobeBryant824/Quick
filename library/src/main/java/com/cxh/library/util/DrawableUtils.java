@@ -5,7 +5,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
-import android.os.Build;
 
 
 public class DrawableUtils {
@@ -58,10 +57,6 @@ public class DrawableUtils {
 			return 0;
 		}
 		Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
-			return bitmap.getByteCount();
-		} else {
-			return bitmap.getRowBytes() * bitmap.getHeight();
-		}
+		return bitmap.getByteCount();
 	}
 }

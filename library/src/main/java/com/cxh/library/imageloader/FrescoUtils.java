@@ -1,4 +1,4 @@
-package com.cxh.library.util;
+package com.cxh.library.imageloader;
 
 import android.content.res.Resources;
 import android.net.Uri;
@@ -12,6 +12,7 @@ import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.common.ResizeOptions;
 import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
@@ -63,6 +64,25 @@ public class FrescoUtils {
                 .build();
         draweeView.setHierarchy(hierarchy);
         draweeView.setImageURI(path);
+    }
+
+    /**
+     * 自定义图片尺寸
+     *
+     * @param path       图片地址
+     * @param draweeView 显示的控件
+     * @param width      50
+     * @param height     50
+     */
+    public static void loadImage(String path, SimpleDraweeView draweeView, int width, int height) {
+        ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse(path))
+                .setResizeOptions(new ResizeOptions(width, height))
+                .build();
+        DraweeController controller = Fresco.newDraweeControllerBuilder()
+                .setImageRequest(request)
+                .setOldController(draweeView.getController())
+                .build();
+        draweeView.setController(controller);
     }
 
     /**

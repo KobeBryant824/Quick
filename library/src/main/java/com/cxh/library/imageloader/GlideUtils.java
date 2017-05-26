@@ -1,4 +1,4 @@
-package com.cxh.library.util;
+package com.cxh.library.imageloader;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -25,6 +25,7 @@ import java.io.File;
  * Created by Hai (haigod7@gmail.com) on 2017/3/10 10:40.
  */
 public class GlideUtils {
+    //  * 当列表在滑动的时候，调用pauseRequests()取消请求，滑动停止时，调用resumeRequests()恢复请求
 
     /**
      * 特殊路径用此方法加载
@@ -102,7 +103,7 @@ public class GlideUtils {
     }
 
     /**
-     * 设置下载优先级
+     * 设置下载优先级，但不保证所有图片都按序加载
      *
      * @param path      图片地址
      * @param priority  IMMEDIATE 立即, HIGH, NORMAL 默认, LOW, priority
