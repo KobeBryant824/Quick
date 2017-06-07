@@ -9,20 +9,22 @@
 - [ChroMATERIAL 编辑器字体颜色](https://plugins.jetbrains.com/plugin/7998-chromaterial)
 - [苹果超酷字体 Menlo](http://101.96.8.164/www.ffonts.net/PT-Mono.font.zip)
 - [Bintray jcenter - Maven](https://bintray.com/bintray/jcenter/)
-- [JetBrains IntelliJ IDEA Plugin Repository](https://plugins.jetbrains.com/)
+- [IntelliJ IDEA Plugin](https://plugins.jetbrains.com/)
 - [Gradle Distributions](http://services.gradle.org/distributions/)
 - [Interpolator 插值器模拟](http://inloop.github.io/interpolator/) 
 - [Bézier Curve 贝塞尔曲线模拟器](http://myst729.github.io/bezier-curve/) 
 - [Chroma 取色器](http://chroma.spencerhamm.com/) 
 - [Color Hunt 好看的颜色](http://www.colorhunt.co/)
-- [Android Shadow Generator 9PNG图制作](http://inloop.github.io/shadow4android/) 
-- [Screen Sizes 屏幕尺寸排行](http://screensiz.es/phone) 
+- [Android Shadow Generator 9PNG 图制作](http://inloop.github.io/shadow4android/) 
+- [JPG PNG 智能压缩](https://tinypng.com/) 
+- [Screen Sizes 屏幕尺寸排行](http://screensiz.es/phone)
 - [Dribbble  在线设计交流网站](https://dribbble.com/)
 - [阿里巴巴矢量图标库](http://www.iconfont.cn/plus/home/index)
+- [神注释大全](https://github.com/Blankj/awesome-comment)
+- [Emojj](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
 - [手机 APK 历史版本](http://www.shouji.com.cn/) 
 - [简历模版](https://github.com/Trinea/trinea-download/tree/master/resume)
 - [Android 应用开发助手](https://mp.weixin.qq.com/s?__biz=MzAxNjI3MDkzOQ==&mid=2654472664&idx=1&sn=dfc2b5beb90daa8fd068d8064ce0dcce&chksm=803bfaecb74c73fa9a9addfd4d8bce031186c34b7d7b59ee22df41799c7eaa71a34863890f56&mpshare=1&scene=1&srcid=0105g443TtBNq2VTK9qpLVbo&key=a226a081696afed06cc6c16adbd5c474a637fe50a7b54f3ff66bb2e93601c7a113db9df6a5f34742850536cff223a2812cc2ebc14433ce85d5f13f7fc949e4eef9c8b220b26191bee58256d74f2022a6&ascene=0&uin=MTYzMjY2MTE1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.12.2+build(16C67)&version=12010210&nettype=WIFI&fontScale=100&pass_ticket=rbpcEWdcnbow6%2Frw0WblN5umWjX4EWC%2B%2BsSxXkJYlFg%3D)
-- [神注释大全](https://github.com/Blankj/awesome-comment)
 
 
 #### Blog
@@ -33,14 +35,29 @@
 - [Material Design中文版](http://wiki.jikexueyuan.com/project/material-design/)
 - [Material Design](http://www.materialdoc.cn/)
 - [干货集中营](http://gank.io/)
-- [Android开发技术周报](http://www.androidweekly.cn/)
-- [Hongyang](http://blog.csdn.net/lmj623565791)
-- [郭霖](http://blog.csdn.net/sinyu890807/article/list/1)
+- [Android 开发技术周报](http://www.androidweekly.cn/)
 - [美团点评技术团队](http://tech.meituan.com/)
 - [CodeKK](http://p.codekk.com/)
 - [泡在网上的日子](http://jcodecraeer.com/plus/list.php?tid=31)
+- [Hongyang](http://blog.csdn.net/lmj623565791)
+- [郭霖](http://blog.csdn.net/sinyu890807/article/list/1)
 
 
-## License
-Apache-2.0
+
+### 开源许可 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+```
+Copyright 2017 XinHai Chen
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
 
