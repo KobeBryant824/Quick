@@ -4,7 +4,7 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Base64;
 
-import com.cxh.library.MApplication;
+import com.cxh.library.App;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -68,7 +68,7 @@ public class FileUtils {
 
 	/** 获取应用的cache目录 */
 	public static String getCachePath() {
-		File f = MApplication.getContext().getCacheDir();
+		File f = App.getInstance().getCacheDir();
 		if (null == f) {
 			return null;
 		} else {

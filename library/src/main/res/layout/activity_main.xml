@@ -1,9 +1,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="200dp">
 
-    <ScrollView
-        android:id="@+id/rl"
+    <com.cxh.library.widget.AutoFillEmailEditText
+        android:id="@+id/et_mail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="10dp"
+        android:hint="邮箱地址"
+        android:singleLine="true"
+        android:textSize="15sp"
+        app:AutoFillEmailEditText_default_drop_down_bg="@color/colorAccent"
+        app:AutoFillEmailEditText_default_drop_down_divider="true"
+        app:AutoFillEmailEditText_default_drop_down_key_color="@color/colorPrimaryDark"
+        app:AutoFillEmailEditText_domains="/@qq.com,@gmail.com,@126.com,@163.com"/>
+
 </RelativeLayout>

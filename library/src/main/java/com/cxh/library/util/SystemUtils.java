@@ -14,7 +14,7 @@ import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
 
-import com.cxh.library.MApplication;
+import com.cxh.library.App;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -53,7 +53,7 @@ public class SystemUtils {
 
 	/** 获取设备的IMEI */
 	public static String getIMEI() {
-		Context context = MApplication.getContext();
+		Context context = App.getInstance();
 		if (null == context) {
 			return null;
 		}
@@ -63,38 +63,38 @@ public class SystemUtils {
 
 	/** 检测手机是否已插入SIM卡 */
 	public static boolean isCheckSimCardAvailable() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return false;
 		}
-		final TelephonyManager tm = (TelephonyManager) MApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE);
+		final TelephonyManager tm = (TelephonyManager) App.getInstance().getSystemService(Context.TELEPHONY_SERVICE);
 		return tm.getSimState() == TelephonyManager.SIM_STATE_READY;
 	}
 
 	/** sim卡是否可读 */
 	public static boolean isCanUseSim() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return false;
 		}
-		TelephonyManager mgr = (TelephonyManager) MApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE);
+		TelephonyManager mgr = (TelephonyManager) App.getInstance().getSystemService(Context.TELEPHONY_SERVICE);
 		return TelephonyManager.SIM_STATE_READY == mgr.getSimState();
 	}
 
 	/** 取得当前sim手机卡的imsi */
 	public static String getIMSI() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return null;
 		}
-		TelephonyManager tm = (TelephonyManager) MApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE);
+		TelephonyManager tm = (TelephonyManager) App.getInstance().getSystemService(Context.TELEPHONY_SERVICE);
 		return tm.getSubscriberId();
 	}
 
 	/** 返回本地手机号码，这个号码不一定能获取到 */
 	public static String getNativePhoneNumber() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return null;
 		}
 		TelephonyManager telephonyManager;
-		telephonyManager = (TelephonyManager) MApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE);
+		telephonyManager = (TelephonyManager) App.getInstance().getSystemService(Context.TELEPHONY_SERVICE);
 		String NativePhoneNumber = null;
 		NativePhoneNumber = telephonyManager.getLine1Number();
 		return NativePhoneNumber;
@@ -120,19 +120,19 @@ public class SystemUtils {
 
 	/** 获取当前设备的SN */
 	public static String getSimSN() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return null;
 		}
-		TelephonyManager tm = (TelephonyManager) MApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE);
+		TelephonyManager tm = (TelephonyManager) App.getInstance().getSystemService(Context.TELEPHONY_SERVICE);
 		return tm.getSimSerialNumber();
 	}
 
 	/** 获取当前设备的MAC地址 */
 	public static String getMacAddress() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return null;
 		}
-		WifiManager wm = (WifiManager) MApplication.getContext().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+		WifiManager wm = (WifiManager) App.getInstance().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 		WifiInfo info = wm.getConnectionInfo();
 		return info.getMacAddress();
 	}
@@ -159,10 +159,10 @@ public class SystemUtils {
 
 	/** 获取屏幕的分辨率 */
 	public static int[] getResolution() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return null;
 		}
-		WindowManager windowMgr = (WindowManager) MApplication.getContext().getSystemService(Context.WINDOW_SERVICE);
+		WindowManager windowMgr = (WindowManager) App.getInstance().getSystemService(Context.WINDOW_SERVICE);
 		int[] res = new int[2];
 		res[0] = windowMgr.getDefaultDisplay().getWidth();
 		res[1] = windowMgr.getDefaultDisplay().getHeight();
@@ -171,14 +171,14 @@ public class SystemUtils {
 
 	/** 获得设备的横向dpi */
 	public static float getWidthDpi() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return 0;
 		}
 		DisplayMetrics dm = null;
 		try {
-			if (MApplication.getContext() != null) {
+			if (App.getInstance() != null) {
 				dm = new DisplayMetrics();
-				dm = MApplication.getContext().getApplicationContext().getResources().getDisplayMetrics();
+				dm = App.getInstance().getApplicationContext().getResources().getDisplayMetrics();
 			}
 
 			return dm.densityDpi;
@@ -190,11 +190,11 @@ public class SystemUtils {
 
 	/** 获得设备的纵向dpi */
 	public static float getHeightDpi() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return 0;
 		}
 		DisplayMetrics dm = new DisplayMetrics();
-		dm = MApplication.getContext().getApplicationContext().getResources().getDisplayMetrics();
+		dm = App.getInstance().getApplicationContext().getResources().getDisplayMetrics();
 		return dm.ydpi;
 	}
 
@@ -316,10 +316,10 @@ public class SystemUtils {
 
 	/** 获取系统中的Library包 */
 	public static List<String> getSystemLibs() {
-		if (null == MApplication.getContext()) {
+		if (null == App.getInstance()) {
 			return null;
 		}
-		PackageManager pm = MApplication.getContext().getPackageManager();
+		PackageManager pm = App.getInstance().getPackageManager();
 		String[] libNames = pm.getSystemSharedLibraryNames();
 		List<String> listLibNames = Arrays.asList(libNames);
 		LogUtils.d("SystemLibs: " + listLibNames);
@@ -390,10 +390,10 @@ public class SystemUtils {
 
 	/** 获取单个应用最大分配内存，单位为byte */
 	public static long getOneAppMaxMemory() {
-		if (MApplication.getContext() == null) {
+		if (App.getInstance() == null) {
 			return -1;
 		}
-		ActivityManager activityManager = (ActivityManager) MApplication.getContext().getSystemService(Context.ACTIVITY_SERVICE);
+		ActivityManager activityManager = (ActivityManager) App.getInstance().getSystemService(Context.ACTIVITY_SERVICE);
 		return activityManager.getMemoryClass() * 1024 * 1024;
 	}
 
@@ -404,14 +404,14 @@ public class SystemUtils {
 
 	/** 获取指定包名应用占用的内存，单位为byte */
 	public static long getUsedMemory(String packageName) {
-		if (MApplication.getContext() == null) {
+		if (App.getInstance() == null) {
 			return -1;
 		}
 		if (TextUtils.isEmpty(packageName)) {
-			packageName = MApplication.getContext().getPackageName();
+			packageName = App.getInstance().getPackageName();
 		}
 		long size = 0;
-		ActivityManager activityManager = (ActivityManager) MApplication.getContext().getSystemService(Context.ACTIVITY_SERVICE);
+		ActivityManager activityManager = (ActivityManager) App.getInstance().getSystemService(Context.ACTIVITY_SERVICE);
 		List<ActivityManager.RunningAppProcessInfo> runapps = activityManager.getRunningAppProcesses();
 		for (ActivityManager.RunningAppProcessInfo runapp : runapps) { // 遍历运行中的程序
 			if (packageName.equals(runapp.processName)) {// 得到程序进程名，进程名一般就是包名，但有些程序的进程名并不对应一个包名
@@ -426,10 +426,10 @@ public class SystemUtils {
 
 	/** 获取手机剩余内存，单位为byte */
 	public static long getAvailableMemory() {
-		if (MApplication.getContext() == null) {
+		if (App.getInstance() == null) {
 			return -1;
 		}
-		ActivityManager activityManager = (ActivityManager) MApplication.getContext().getSystemService(Context.ACTIVITY_SERVICE);
+		ActivityManager activityManager = (ActivityManager) App.getInstance().getSystemService(Context.ACTIVITY_SERVICE);
 		ActivityManager.MemoryInfo info = new ActivityManager.MemoryInfo();
 		activityManager.getMemoryInfo(info);
 		return info.availMem;
@@ -452,10 +452,10 @@ public class SystemUtils {
 
 	/** 手机低内存运行阀值，单位为byte */
 	public static long getThresholdMemory() {
-		if (MApplication.getContext() == null) {
+		if (App.getInstance() == null) {
 			return -1;
 		}
-		ActivityManager activityManager = (ActivityManager) MApplication.getContext().getSystemService(Context.ACTIVITY_SERVICE);
+		ActivityManager activityManager = (ActivityManager) App.getInstance().getSystemService(Context.ACTIVITY_SERVICE);
 		ActivityManager.MemoryInfo info = new ActivityManager.MemoryInfo();
 		activityManager.getMemoryInfo(info);
 		return info.threshold;
@@ -463,10 +463,10 @@ public class SystemUtils {
 
 	/** 手机是否处于低内存运行 */
 	public static boolean isLowMemory() {
-		if (MApplication.getContext() == null) {
+		if (App.getInstance() == null) {
 			return false;
 		}
-		ActivityManager activityManager = (ActivityManager) MApplication.getContext().getSystemService(Context.ACTIVITY_SERVICE);
+		ActivityManager activityManager = (ActivityManager) App.getInstance().getSystemService(Context.ACTIVITY_SERVICE);
 		ActivityManager.MemoryInfo info = new ActivityManager.MemoryInfo();
 		activityManager.getMemoryInfo(info);
 		return info.lowMemory;

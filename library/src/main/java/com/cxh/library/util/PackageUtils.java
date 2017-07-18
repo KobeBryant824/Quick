@@ -8,7 +8,7 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 
 
-import com.cxh.library.MApplication;
+import com.cxh.library.App;
 
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
@@ -33,7 +33,7 @@ public class PackageUtils {
 	
 	/** 根据packageName获取packageInfo */
 	public static PackageInfo getPackageInfo(String packageName) {
-		Context context = MApplication.getContext();
+		Context context = App.getInstance();
 		if (null == context) {
 			return null;
 		}
@@ -73,7 +73,7 @@ public class PackageUtils {
 
 	/** 判断是否是第三方软件 */
 	public static boolean isThirdPartyApp(String packageName) {
-		Context context = MApplication.getContext();
+		Context context = App.getInstance();
 		if (null == context) {
 			return false;
 		}
@@ -190,7 +190,7 @@ public class PackageUtils {
 
 	/** 通过包名读取已安装APP数字签名 */
 //	public static String getInstalledPackageSignature(String packageName) {
-//		Context context = MApplication.getContext();
+//		Context context = App.getInstance();
 //		if (null == context) {
 //			return null;
 //		}
@@ -208,7 +208,7 @@ public class PackageUtils {
 
 	/** 获取指定路径的apk的资源 */
 	public static Resources getAPKResources(String apkPath) throws Exception {
-		Context context = MApplication.getContext();
+		Context context = App.getInstance();
 		if (null == context) {
 			return null;
 		}

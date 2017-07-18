@@ -28,4 +28,28 @@
         <item name="android:indeterminateDuration">3500</item>
     </style>
 
+    <!--下拉-->
+    <style name="AnimDown" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_out</item>
+    </style>
+
+    <!--上拉-->
+    <style name="AnimUp" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <!--向右-->
+    <style name="AnimRight" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_left_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_left_out</item>
+    </style>
+
+    <!--向左-->
+    <style name="AnimLeft" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_scale_right_in</item>
+        <item name="android:windowExitAnimation">@anim/push_scale_right_out</item>
+    </style>
+
 </resources>

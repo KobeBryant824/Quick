@@ -8,25 +8,25 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.cxh.library.MApplication;
+import com.cxh.library.App;
 
 public class UIUtils {
 
 	public static Context getContext() {
-		return MApplication.getContext();
+		return App.getInstance();
 	}
 
 	public static Thread getMainThread() {
-		return MApplication.getMainThread();
+		return App.getMainThread();
 	}
 
 	public static long getMainThreadId() {
-		return MApplication.getMainThreadId();
+		return App.getMainThreadId();
 	}
 
 	/** 获取主线程的handler */
 	public static Handler getHandler() {
-		return MApplication.getMainThreadHandler();
+		return App.getMainThreadHandler();
 	}
 
 	/** 延时在主线程执行runnable */
