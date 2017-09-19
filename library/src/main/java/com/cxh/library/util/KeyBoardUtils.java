@@ -1,5 +1,6 @@
 package com.cxh.library.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -17,5 +18,12 @@ public class KeyBoardUtils {
 	public static void closeKeybord(EditText mEditText, Context mContext) {
 		InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
+	}
+
+	private static void clostKeybord(Activity activity){
+		InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+		if (imm != null) {
+			imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
+		}
 	}
 }

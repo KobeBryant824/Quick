@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ApiDebugger">
     <method />
+    <url value="http://172.25.14.222:8080/web/referralInfo/configUser.do?phoneNum=18600503478">
+      <param key="code" value="1" />
+    </url>
   </component>
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
