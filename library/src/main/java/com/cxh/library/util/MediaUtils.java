@@ -20,6 +20,7 @@ public class MediaUtils {
 
     /**
      * 进入系统拍照
+     *
      * @param activity
      * @param outputUri 照片输出路径 Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/image.jpg"))
      */
@@ -33,14 +34,14 @@ public class MediaUtils {
 
     /**
      * 进入系统拍照 (输出为Bitmap)<br>
-     *
+     * <p>
      * 获得输出
      * 在 @<code>onActivityResult</code>中<br>
      * 通过@<code>Bitmap bitmap = (Bitmap)intent.data.getExtras().get("data")</code>获取<br>
-     *
+     * <p>
      * Tips: 返回的Bitmap并非原图的Bitmap而是经过压缩的Bitmap
-     * @param activity
      *
+     * @param activity
      */
     public static void startActivityForCamera(Activity activity, int requestCode) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -54,21 +55,22 @@ public class MediaUtils {
      * 在 @<code>onActivityResult</code>中通过@<code>Uri uri = intent.getData()</code>获取<br>
      * Uri返回路径格式为 content://media/external/images/media/32073<br>
      * 需要经过转换才能获得绝对路径
+     *
      * @param activity
      */
     public static void startActivityForGallery(Activity activity, int requestCode) {
         // 弹出系统图库
-        Intent i = new Intent(Intent.ACTION_PICK,
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         activity.startActivityForResult(i, requestCode);
     }
 
     /**
      * 进入系统裁剪
-     * @param inputUri 需裁剪的图片路径 Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/image.jpg")
+     *
+     * @param inputUri  需裁剪的图片路径 Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/image.jpg")
      * @param outputUri 裁剪后图片路径 Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/image_cut.jpg")
-     * @param width 裁剪后宽度(px)
-     * @param height 裁剪后高度(px)
+     * @param width     裁剪后宽度(px)
+     * @param height    裁剪后高度(px)
      */
     public static void startActivityForImageCut(Activity activity, int requestCode,
                                                 Uri inputUri, Uri outputUri,

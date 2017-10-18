@@ -5,13 +5,13 @@ import android.app.Activity;
 import java.util.Stack;
 
 /**
- * Activity栈管理
+ * Activity 栈管理
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
  */
 public class ActivityManager {
+
     private static ActivityManager instance;
-    //activity栈
-    private Stack<Activity> activityStack;
+    private Stack<Activity> activityStack; //activity栈
 
     /**
      * 单例模式
@@ -20,7 +20,11 @@ public class ActivityManager {
      */
     public static ActivityManager getInstance() {
         if (instance == null) {
-            instance = new ActivityManager();
+            synchronized (ActivityManager.class) {
+                if (instance == null) {
+                    instance = new ActivityManager();
+                }
+            }
         }
         return instance;
     }
@@ -107,10 +111,8 @@ public class ActivityManager {
     public void appExit() {
         try {
             finishAllActivity();
-            //退出JVM(java虚拟机),释放所占内存资源,0表示正常退出(非0的都为异常退出)
-            System.exit(0);
-            //从操作系统中结束掉当前程序的进程
-            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(0); //退出JVM(java虚拟机),释放所占内存资源,0表示正常退出(非0的都为异常退出)
+            android.os.Process.killProcess(android.os.Process.myPid()); //从操作系统中结束掉当前程序的进程
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -9,7 +9,6 @@ import com.cxh.library.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * 流式布局
  * Created by Hai (haigod7@gmail.com) on 2017/3/6 10:51.
