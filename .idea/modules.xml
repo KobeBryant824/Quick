@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Quick.iml" filepath="$PROJECT_DIR$/Quick.iml" />
-      <module fileurl="file://D:\Android\workspace\Quick\Quick.iml" filepath="D:\Android\workspace\Quick\Quick.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://D:\Android\workspace\Quick\library\library.iml" filepath="D:\Android\workspace\Quick\library\library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quick.iml" filepath="$PROJECT_DIR$/quick.iml" />
     </modules>
   </component>
 </project>
